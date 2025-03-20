@@ -5,16 +5,16 @@ Nitrokey HSM 2
 
 This documentations describes how to use Nitrokey HSM2 devices. Nitrokey HSM 2 can be used to keep an offline root CA secure.
 
-For building a Public Key Infrastructure (PKI), you might want to protect the use of your root CA with m-of-n authentication. If so, interacting with your Nitrokeys requires the use of graphical components called SmartCard Shell and PKIAAS. Please refer to this guide: `Getting Started <getting-started-with-pkiaas.html#getting-started>`__
+For simple cases without m-of-n authentication, use the OpenSC command line tools as described `here <getting-started-opensc.html>`__.
 
-If m-of-n authentication is not mandatory for you, then your devices can be used through command line tools provided by the OpenSC project. Please refer to this page `Getting Started <getting-started-with-opensc.html#getting-started>`__
+For building a Public Key Infrastructure (PKI) and protecting your root CA with m-of-n authentication by using the graphical applications SmartCard Shell and PKI-as-a-Service, please refer to `this guide <getting-started-pkiaas.html>`__.
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   Getting Started with PKIAAS <getting-started-with-pkiaas>
-   Getting Started with OpenSC <getting-started-with-opensc>
+   Getting Started With PKIAAS <getting-started-pkiaas>
+   Getting Started With OpenSC <getting-started-opensc>
    Frequently Asked Questions <faq>
 
 or check out the features:
