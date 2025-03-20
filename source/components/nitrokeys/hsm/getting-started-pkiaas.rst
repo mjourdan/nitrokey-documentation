@@ -1,7 +1,7 @@
-Getting started with PKI-as-a-Service
+Getting Started With PKI-as-a-Service
 =====================================
 
-This guide describes how to set up a PKI made of :
+This guide describes how to set up a PKI made of:
 
 * An offline root CA, used only to sign intermediate CAs and revocation
   list. It is kept secure on a HSM.
@@ -20,35 +20,33 @@ custodians.
 
 We also want to have shared control over the use of the CA, so we will
 also rely upon a m-of-n scheme, with pubkeys authentication. Pubkey
-authentication will be possible by the mean of personal HSM devices
+authentication will be possible by the means of personal HSM devices
 distributed to key custodians.
 
 One thing to do is to define how many people will be involved in those
 m-of-n schemes, and what is the quorum to reach. We suggest the number
 of required parts to be greater than the number to additional parts. A
-quorum of 3 people needed out of 5 key custodians is a common ration.
+quorum of 3 people needed out of 5 key custodians is a common ratio.
 
 Requirements
 ------------
 
 The following devices will be involved:
 
--  two Nitrokey HSM 2 for the root CA and its backup
--  five Nitrokey HSM 2 for personal authentication
--  we also suggest to keep one spare device, just in case
+* Two Nitrokey HSM 2 for the root CA and its backup, called “CA HSM”
+* Five Nitrokey HSM 2 for personal authentication, called “personal HSM”
+* We also suggest to keep one spare device, just in case
 
 Our setup will involve:
 
--  the certificate operator personal machine, to run
+* The certificate operator personal machine, to run
 
-   -  SmartCard Shell, a Java based graphical user interface to
-      initialize the devices
-   -  OCF, to connect your HSM devices to the remote CA web app
+  * SmartCard Shell, a Java based graphical user interface to initialize the devices
+  * OCF, to connect your HSM devices to the remote CA web app
 
--  a Docker server, on which will be deployed
+* A Docker server, on which will be deployed
 
-   -  PKIAAS, a Java based web app to sign the root CA and deliver
-      intermediate certificates
+  * PKIAAS, a Java based web app to sign the root CA and deliver intermediate certificates
 
 Both SmartCard Shell and PKIAAS are developed by CardContact, the
 company that makes the chip embedded in Nitrokey HSM 2. Details on how
@@ -57,13 +55,10 @@ to install this software will be given later in this guide.
 Procedure
 ---------
 
-From now on, we will speak of “personal HSM” and “CA HSM” because of
-their distinct purposes.
-
-The following guide will involve a ``certificate operator``, in charge
+The following guides will involve a ``certificate operator``, in charge
 of doing the technical steps, and ``key custodians``, whom will have to
 enter their PIN when required.
 
-`Prepare your HSM with Smart Card Shell <smart-card-shell>`__
+#. `Prepare your HSM with Smart Card Shell <smart-card-shell>`__
 
-`Build your PKI with PKIAAS <pkiaas>`__
+#. `Build your PKI with PKIAAS <pkiaas>`__
